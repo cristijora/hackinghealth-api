@@ -20,6 +20,8 @@ const appHooks = require('./app.hooks');
 
 const authentication = require('./authentication');
 
+const mongodb = require('./mongodb');
+
 const app = feathers();
 
 // Load app configuration
@@ -36,6 +38,7 @@ app.use('/', feathers.static(app.get('public')));
 
 // Set up Plugins and providers
 app.configure(hooks());
+app.configure(mongodb);
 app.configure(rest());
 app.configure(socketio());
 

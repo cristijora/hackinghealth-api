@@ -2,6 +2,30 @@ const { authenticate } = require('feathers-authentication').hooks;
 const commonHooks = require('feathers-hooks-common');
 const { restrictToOwner } = require('feathers-authentication-hooks');
 const local = require('feathers-authentication-local');
+const jsonValidator = require('./../../hooks/json-validator')
+
+var schema = {
+  message: 'User validation failed',
+  properties: {
+    username: {
+      type: 'string',
+      required: true,
+      maxLength: 20,
+      minLength: 3
+    },
+    email: {
+      type: 'string',
+      format: 'email',
+      required: true
+    },
+    password: {
+      type: 'string',
+      required: true,
+      minLength: 5
+    }
+  }
+}
+
 
 const restrict = [
   authenticate('jwt'),
@@ -16,7 +40,7 @@ module.exports = {
     all: [],
     find: [ authenticate('jwt') ],
     get: [ ...restrict ],
-    create: [local.hooks.hashPassword({ passwordField: 'password' })],
+    create: [jsonValidator(schema), local.hooks.hashPassword({ passwordField: 'password' })],
     update: [ ...restrict ],
     patch: [ ...restrict ],
     remove: [ ...restrict ]

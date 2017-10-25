@@ -24,5 +24,6 @@
       "expiresIn": "1d"
     }
   },
-  "nedb": "../data"
+  "nedb": "../data",
+  "mongodb": "mongodb://admin:admin@ds133465.mlab.com:33465/hacking-health"
 }
