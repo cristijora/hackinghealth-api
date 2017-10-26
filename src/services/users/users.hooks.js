@@ -7,12 +7,6 @@ const jsonValidator = require('./../../hooks/json-validator')
 var schema = {
   message: 'User validation failed',
   properties: {
-    username: {
-      type: 'string',
-      required: true,
-      maxLength: 20,
-      minLength: 3
-    },
     email: {
       type: 'string',
       format: 'email',
@@ -41,8 +35,8 @@ module.exports = {
     find: [ authenticate('jwt') ],
     get: [ ...restrict ],
     create: [jsonValidator(schema), local.hooks.hashPassword({ passwordField: 'password' })],
-    update: [ ...restrict ],
-    patch: [ ...restrict ],
+    update: [ ...restrict, jsonValidator(schema)],
+    patch: [ ...restrict, jsonValidator(schema)],
     remove: [ ...restrict ]
   },
 
