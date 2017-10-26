@@ -9,13 +9,12 @@ var schema = {
     name: {
       type: 'string',
       required: true,
-      minLength: 5
+      minLength: 2
     },
     birthDate: {
       type: 'string',
       format: 'date',
-      required: true,
-      minLength: 5
+      required: true
     },
     birthWeight: {
       type: 'number',
