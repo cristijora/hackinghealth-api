@@ -1,0 +1,5 @@
+{"email":"test4@gmail.com","password":"$2a$12$nw7P7PC9D2FLPHzKSRn4duShLf.6EUTqsnRdbGoPQ9.uiix2enG3m","_id":"BXpgbcMBqbjg3U9N"}
+{"password":"$2a$12$EefUU4jR1ERbW31rC3f.7eV68H4elurN/0PIl42qzHAXmWK78BmrW","_id":"lNDRDVsAp8K2qhYC"}
+{"email":"test@gmail.com","password":"$2a$12$RkwQtJdQ5YioFWO3/HQKKekpF8qkL8puAaS9vQseU8T8F78i9dEZ6","_id":"mxDmoqItdyariu53"}
+{"username":"test123","email":"test3@gmail.com","password":"$2a$12$m0Eo6Yyz0UcMH/Xt4MLnX.xqLB5VkerHbx9qHzoZ/ZYNAnKb8J8DK","_id":"rIOyKz72CNeXoHdh"}
+{"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}
