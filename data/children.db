@@ -1,1 +1,1 @@
-{"name":"Sofia","birthDate":"2017-08-08","birthWeight":3000,"birthHeight":60,"gender":"feminin","currentWeight":5700,"currentHeight":80,"userId":"BXpgbcMBqbjg3U9N","createdAt":1509215156889,"_include":["user"],"user":{"email":"test4@gmail.com","_id":"BXpgbcMBqbjg3U9N"},"_id":"nfeSvbIBLgG3LojF"}
+{"name":"Filip","birthDate":"2017-06-29","birthWeight":3100,"birthHeight":48,"gender":"masculin","currentWeight":3500,"currentHeight":51,"userId":"BXpgbcMBqbjg3U9N","createdAt":1509227168096,"_id":"TDkGY6HpWxYt4AVq"}
