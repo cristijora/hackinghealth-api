@@ -1,6 +1,6 @@
-const { authenticate } = require('feathers-authentication').hooks;
+const {authenticate} = require('feathers-authentication').hooks;
 const commonHooks = require('feathers-hooks-common');
-const { restrictToOwner } = require('feathers-authentication-hooks');
+const {restrictToOwner} = require('feathers-authentication-hooks');
 const local = require('feathers-authentication-local');
 const jsonValidator = require('./../../hooks/json-validator')
 
@@ -32,12 +32,12 @@ const restrict = [
 module.exports = {
   before: {
     all: [],
-    find: [ authenticate('jwt') ],
-    get: [ ...restrict ],
-    create: [jsonValidator(schema), local.hooks.hashPassword({ passwordField: 'password' })],
-    update: [ ...restrict, jsonValidator(schema)],
-    patch: [ ...restrict, jsonValidator(schema)],
-    remove: [ ...restrict ]
+    find: [authenticate('jwt')],
+    get: [...restrict],
+    create: [jsonValidator(schema), local.hooks.hashPassword({passwordField: 'password'})],
+    update: [...restrict, jsonValidator(schema)],
+    patch: [...restrict, jsonValidator(schema)],
+    remove: [...restrict]
   },
 
   after: {

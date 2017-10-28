@@ -4,7 +4,7 @@ var revalidator = require('revalidator')
 var errors = require('feathers-errors')
 
 module.exports = function (schema) { // eslint-disable-line no-unused-vars
-  return function jsonValidator (hook) {
+  return function jsonValidator(hook) {
     let result = revalidator.validate(hook.data, schema)
 
     if (result.valid) return hook

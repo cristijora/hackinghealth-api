@@ -1,7 +1,7 @@
-const { authenticate } = require('feathers-authentication').hooks;
-const { populate } = require('feathers-hooks-common');
-const processChild =require('../../hooks/process-child')
-const jsonValidator = require('./../../hooks/json-validator')
+const {authenticate} = require('feathers-authentication').hooks;
+const {populate} = require('feathers-hooks-common');
+const processChild = require('../../hooks/process-child');
+const jsonValidator = require('./../../hooks/json-validator');
 
 var schema = {
   message: 'Child validation',
@@ -24,7 +24,7 @@ var schema = {
       type: 'number'
     },
     birthHeight: {
-      type:'number',
+      type: 'number',
       required: true
     },
     currentHeight: {
@@ -36,11 +36,11 @@ var schema = {
       enum: ['feminin', 'masculin']
     }
   }
-}
+};
 
 module.exports = {
   before: {
-    all: [ authenticate('jwt') ],
+    all: [authenticate('jwt')],
     find: [],
     get: [],
     create: [processChild(), jsonValidator(schema)],
